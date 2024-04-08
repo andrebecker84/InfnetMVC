@@ -16,10 +16,5 @@ namespace InfnetMVC.Models
         public string Local { get; set; }
 
         public ICollection<Funcionario>? Funcionarios { get; set; } // Relacionamento 1:N
-
-        public Departamento()
-        {
-            Funcionarios = new HashSet<Funcionario>();
-        } 
     }
 }

@@ -10,7 +10,7 @@ namespace InfnetMVC.Models
         public int FuncionarioId { get; set; }
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(50)] // Tamanho máximo de 50 caracteres para o nome
         public string Nome { get; set; }
 
         [ForeignKey("Endereco")]
@@ -26,7 +26,7 @@ namespace InfnetMVC.Models
         public string Email { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)] // Formato de data sempre dd/MM/yyyy sem horário
         [Display(Name = "Data de Nascimento")]
         public DateTime DataNascimento { get; set; }
 

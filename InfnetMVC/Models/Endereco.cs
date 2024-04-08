@@ -28,10 +28,5 @@ namespace InfnetMVC.Models
         [MaxLength(8)]
         public string Cep { get; set; }
         public ICollection<Funcionario>? Funcionarios { get; set; } // Relacionamento 1:N
-
-        public Endereco()
-        {
-            Funcionarios = new HashSet<Funcionario>();
-        }
     }
 }
