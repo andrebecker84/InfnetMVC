@@ -197,7 +197,7 @@ namespace InfnetMVC.Migrations
                     EnderecoId = table.Column<int>(type: "INTEGER", nullable: false),
                     Telefone = table.Column<string>(type: "TEXT", nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),
-                    DataNascimento = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    DataNascimento = table.Column<DateTime>(type: "DATE", nullable: false),
                     DepartamentoId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>

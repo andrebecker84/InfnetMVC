@@ -26,7 +26,7 @@ namespace InfnetMVC.Models
         public string Email { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)] // Formato de data sempre dd/MM/yyyy sem horário
+        // [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)] // Formato de data sempre dd/MM/yyyy sem horário (opcional)
         [Display(Name = "Data de Nascimento")]
         public DateTime DataNascimento { get; set; }
 
