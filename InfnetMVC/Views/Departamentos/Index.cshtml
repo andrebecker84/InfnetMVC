@@ -4,38 +4,55 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<style>
+    .cover-container {
+        max-width: 100%;
+    }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Local)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Local)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    td {
+        line-height: 3rem;
+    }
+</style>
+
+<div class="card shadow p-5 cover-container">
+    <h1>Departamentos</h1>
+
+    <p>
+        <a class="d-flex btn btn-primary justify-content-center align-items-center mx-4 my-3 p-3 fs-5 fw-bold rounded-pill" title="Criar" asp-action="Create">
+            <i class="fa-solid fa-plus"></i>
+            <span class="opacity-0">_</span>Criar Departamento
+        </a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Local)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Local)
+                    </td>
+                    <td>
+                        <a class="btn btn-success btn-sm rounded-circle" title="Editar" asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a><span class="opacity-0">__</span>
+                        <a class="btn btn-primary btn-sm rounded-circle" title="Detalhes" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-table"></i></a><span class="opacity-0">__</span>
+                        <a class="btn btn-danger btn-sm rounded-circle" title="Apagar" asp-action="Delete" asp-route-id="@item.Id"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
