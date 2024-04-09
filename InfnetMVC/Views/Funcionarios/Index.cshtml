@@ -6,6 +6,7 @@
 <style>
     .cover-container {
         max-width: 100%;
+        border-radius: 3rem;
     }
 
     td {
@@ -17,7 +18,7 @@
     <h1>Funcionários</h1>
 
     <p>
-        <a class="d-flex btn btn-primary justify-content-center align-items-center mx-4 my-3 p-3 fs-5 fw-bold rounded-pill" title="Criar" asp-action="Create">
+        <a class="shadow my-3 mb-4 p-3 btn btn-primary fs-5 rounded-pill" title="Criar" asp-action="Create">
             <i class="fa-solid fa-plus"></i>
             <span class="opacity-0">_</span>Criar Funcionário
         </a>
@@ -70,9 +71,9 @@
                         @Html.DisplayFor(modelItem => item.Departamento.Local)
                     </td>
                     <td>
-                        <a class="btn btn-success btn-sm rounded-circle" title="Editar" asp-action="Edit" asp-route-id="@item.FuncionarioId"><i class="fa fa-edit"></i></a><span class ="opacity-0">__</span>
-                        <a class="btn btn-primary btn-sm rounded-circle" title="Detalhes" asp-action="Details" asp-route-id="@item.FuncionarioId"><i class="fa fa-table"></i></a><span class="opacity-0">__</span>
-                        <a class="btn btn-danger btn-sm rounded-circle" title="Apagar" asp-action="Delete" asp-route-id="@item.FuncionarioId"><i class="fa fa-trash"></i></a>
+                        <a class="shadow btn btn-success btn-sm rounded-circle" title="Editar" asp-action="Edit" asp-route-id="@item.FuncionarioId"><i class="fa fa-edit"></i></a><span class="opacity-0">__</span>
+                        <a class="shadow btn btn-primary btn-sm rounded-circle" title="Detalhes" asp-action="Details" asp-route-id="@item.FuncionarioId"><i class="fa fa-table"></i></a><span class="opacity-0">__</span>
+                        <a class="shadow btn btn-danger btn-sm rounded-circle" title="Apagar" asp-action="Delete" asp-route-id="@item.FuncionarioId"><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>
             }

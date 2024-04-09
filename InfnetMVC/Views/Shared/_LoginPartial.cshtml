@@ -20,15 +20,15 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <form asp-controller="Account" asp-action="Logout" method="post" class="form-check-inline">
-        <button type="submit" class="btn btn-danger rounded-pill" title="Sair"><i class="fa-solid fa-person-running"></i></button>
+        <button type="submit" class="shadow btn btn-danger rounded-pill" title="Sair"><i class="fa-solid fa-person-running"></i></button>
     </form>
 }
 else
 {
     <form asp-controller="Account" asp-action="Login" method="post" class="d-flex">
-        <input asp-for="Email" class="form-control rounded-pill wide-input" autocomplete="username" aria-required="true" placeholder=" Digite seu e-mail" required />
-        <input asp-for="Password" class="form-control rounded-pill wide-input" autocomplete="current-password" aria-required="true" placeholder=" Digite sua senha" required />
-        <button type="submit" class="btn btn-primary rounded-pill" title="Login"><i class="fa-solid fa-right-to-bracket"></i></button>
-        <a href="~/Account/Register" id="registerSubmit" type="submit" class="btn btn-success rounded-pill" title="Registrar"><i class="fa-solid fa-user-plus"></i></a>
+        <input asp-for="Email" class="shadow form-control rounded-pill wide-input" autocomplete="username" aria-required="true" placeholder=" Digite seu e-mail" required />
+        <input asp-for="Password" class="shadow form-control rounded-pill wide-input" autocomplete="current-password" aria-required="true" placeholder=" Digite sua senha" required />
+        <button type="submit" class="shadow btn btn-primary rounded-pill" title="Login"><i class="fa-solid fa-right-to-bracket"></i></button>
+        <a href="~/Account/Register" id="registerSubmit" type="submit" class="shadow btn btn-success rounded-pill" title="Registrar"><i class="fa-solid fa-user-plus"></i></a>
     </form>
 }
