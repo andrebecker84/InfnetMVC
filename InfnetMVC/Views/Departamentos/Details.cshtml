@@ -1,30 +1,70 @@
 ﻿@model InfnetMVC.Models.Departamento
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes";
 }
 
-<h1>Details</h1>
+<style>
+    .cover-container {
+        max-width: 80%;
+        border-radius: 3rem;
+    }
 
-<div>
-    <h4>Departamento</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Local)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Local)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    .edit-box {
+        width: 750px;
+    }
+
+    .card-body-2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    dl {
+        line-height: 1.5rem;
+        width: 100%;
+    }
+
+    .botoes {
+        justify-content: center;
+        display: flex;
+        gap: 1rem;
+    }
+</style>
+
+<div class="card shadow my-5 p-5 cover-container">
+    <div class="text-center">
+        <h2 class="text-center"><i class="fa-solid fa-table"></i> @ViewData["Title"]</h2>
+    </div>
+
+    <div class="d-flex card-body-2 flex-column align-items-center">
+        <div class="card shadow mb-5 my-3 p-3 container edit-box">
+            <h4><i class="fa-solid fa-building"></i> Departamento</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Id)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Id)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Local)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Local)
+                </dd>
+            </dl>
+        </div>
+        <div class="botoes">
+            <a asp-action="Edit" class="shadow btn btn-primary rounded-pill p-2" asp-route-id="@Model?.Id"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
+            <a asp-action="Index" class="shadow btn btn-secondary rounded-pill p-2"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+        </div>
+    </div>
 </div>

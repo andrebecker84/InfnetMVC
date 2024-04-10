@@ -5,7 +5,7 @@ namespace InfnetMVC.Models
     public class Endereco
     {
         [Key]
-        [Display(Name = "ID Endereço")]
+        [Display(Name = "End. ID")]
         public int EnderecoId { get; set; }
 
         [Required]

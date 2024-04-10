@@ -4,10 +4,10 @@ namespace InfnetMVC.ViewModels
 {
     public class RegisterViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "O email é obrigatório")]
         [EmailAddress]
         public string? Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "A senha é obrigatória")]
         [DataType(DataType.Password)]
         public string? Password { get; set; }
         [DataType(DataType.Password)]

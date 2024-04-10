@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<InfnetMVC.Models.Departamento>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Departamentos";
 }
 
 <style>
@@ -16,7 +16,7 @@
 </style>
 
 <div class="card shadow p-5 cover-container">
-    <h2><i class="fa-solid fa-building-user"></i> Departamentos</h2>
+    <h2><i class="fa-solid fa-building-user"></i> @ViewData["Title"]</h2>
     <hr />
 
     <p>
@@ -30,6 +30,9 @@
         <thead>
             <tr>
                 <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.Nome)
                 </th>
                 <th>
@@ -42,6 +45,9 @@
             @foreach (var item in Model)
             {
                 <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Nome)
                     </td>

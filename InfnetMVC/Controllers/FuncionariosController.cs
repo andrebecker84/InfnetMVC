@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using InfnetMVC.DAL;
 using InfnetMVC.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace InfnetMVC.Controllers
 {
+    [Authorize]
     public class FuncionariosController : Controller
     {
         private readonly InfnetDbContext _context;

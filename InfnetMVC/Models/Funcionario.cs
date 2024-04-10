@@ -6,7 +6,7 @@ namespace InfnetMVC.Models
     public class Funcionario
     {
         [Key]
-        [Display(Name = "ID Funcionário")]
+        [Display(Name = "Func. ID")]
         public int FuncionarioId { get; set; }
 
         [Required]
@@ -14,7 +14,7 @@ namespace InfnetMVC.Models
         public string Nome { get; set; }
 
         [ForeignKey("Endereco")]
-        [Display(Name = "Endereço")]
+        [Display(Name = "End. ID")]
         public int EnderecoId { get; set; } // Chave estrangeira para Endereco
         public Endereco? Endereco { get; set; } // Propriedade de navegação para o endereço
 
@@ -27,11 +27,11 @@ namespace InfnetMVC.Models
 
         [DataType(DataType.Date)]
         // [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)] // Formato de data sempre dd/MM/yyyy sem horário (opcional)
-        [Display(Name = "Data de Nascimento")]
+        [Display(Name = "Data de Nasc.")]
         public DateTime DataNascimento { get; set; }
 
         [ForeignKey("Departamento")]
-        [Display(Name = "Departamento")]
+        [Display(Name = "Dep. ID")]
         public int DepartamentoId { get; set; } // Chave estrangeira
         public Departamento? Departamento { get; set; } // Propriedade de navegação para o departamento
     }

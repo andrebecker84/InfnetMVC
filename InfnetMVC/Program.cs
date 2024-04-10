@@ -41,7 +41,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 //***************************************************************************************************************************
 builder.Services.Configure<IdentityOptions>(options =>
 {
-    options.Password.RequiredLength = 10;              // Define o tamanho mínimo da senha.
+    options.Password.RequiredLength = 8;              // Define o tamanho mínimo da senha.
     options.Password.RequiredUniqueChars = 3;          // Define quantos caracteres únicos(diferentes) a senha deve conter.
     options.Password.RequireNonAlphanumeric = false;   // Define se a senha deve conter caracteres especiais.
     options.Password.RequireUppercase = true;          // Define se a senha deve conter letras maiúsculas.
@@ -72,11 +72,12 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-//**************************************************************
+/*******************************************************/
 // Configuração de rotas:
-//**************************************************************
+/*******************************************************/
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Funcionarios}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+/*******************************************************/
 
 app.Run();

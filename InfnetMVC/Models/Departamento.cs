@@ -5,7 +5,7 @@ namespace InfnetMVC.Models
     public class Departamento
     {
         [Key]
-        [Display(Name = "ID Departamento")]
+        [Display(Name = "Dep. ID")]
         public int Id { get; set; }
 
         [Required]

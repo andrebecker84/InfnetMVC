@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<InfnetMVC.Models.Funcionario>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Funcionários";
 }
+
 <style>
     .cover-container {
         max-width: 80%;
@@ -12,10 +13,21 @@
     td {
         line-height: 3rem;
     }
+
+    .wide-input-reg {
+        width: 400px;
+        height: 40px;
+    }
+
+    .label {
+        margin-top: 1rem;
+        margin-left: 1rem;
+        margin-bottom: 0.5rem;
+    }
 </style>
 
 <div class="card shadow p-5 cover-container">
-    <h2><i class="fa-solid fa-users"></i> Funcionários</h2>
+    <h2><i class="fa-solid fa-users"></i> @ViewData["Title"]</h2>
     <hr />
 
     <p>
@@ -29,7 +41,13 @@
         <thead>
             <tr>
                 <th>
+                    @Html.DisplayNameFor(model => model.FuncionarioId)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EnderecoId)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Endereco)
@@ -44,6 +62,9 @@
                     @Html.DisplayNameFor(model => model.DataNascimento)
                 </th>
                 <th>
+                    @Html.DisplayNameFor(model => model.DepartamentoId)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.Departamento)
                 </th>
                 <th></th>
@@ -54,7 +75,13 @@
             {
                 <tr>
                     <td>
+                        @Html.DisplayFor(modelItem => item.FuncionarioId)
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EnderecoId)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Endereco.Bairro)
@@ -69,6 +96,9 @@
                         @Html.DisplayFor(modelItem => item.DataNascimento)
                     </td>
                     <td>
+                        @Html.DisplayFor(modelItem => item.DepartamentoId)
+                    </td>
+                    <td>
                         @Html.DisplayFor(modelItem => item.Departamento.Local)
                     </td>
                     <td>
@@ -80,4 +110,32 @@
             }
         </tbody>
     </table>
+
+    @* Filtrar por nome *@
+    
+        <div class="d-flex justify-content-center form-group">
+            <div>
+                <label class="label" for="txtNome">Filtrar por nome: </label>
+                <input type="text" id="txtNome" class="shadow form-control rounded-pill wide-input-reg" />
+            </div>
+        </div>
+
+    @section Scripts {
+        <script>
+            $(document).ready(function () {
+                $('#txtNome').on('input', function () {
+                    var filter = $(this).val().toUpperCase();
+                    $('tbody tr').each(function () {
+                        var nome = $(this).find('td:nth-child(2)').text().toUpperCase();
+                        if (nome.indexOf(filter) > -1) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    });
+                });
+            });
+        </script>
+    }
+    @* Filtrar por nome *@
 </div>

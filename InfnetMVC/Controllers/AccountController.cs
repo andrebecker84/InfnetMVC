@@ -67,7 +67,7 @@ namespace InfnetMVC.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Alunos");
+                    return RedirectToAction("Index", "Funcionarios");
                 }
                 ModelState.AddModelError(string.Empty, "Login Inválido");
             }

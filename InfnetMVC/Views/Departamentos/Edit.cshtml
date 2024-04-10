@@ -1,39 +1,78 @@
 ﻿@model InfnetMVC.Models.Departamento
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
 }
 
-<h1>Edit</h1>
+<style>
+    .cover-container {
+        max-width: 80%;
+        border-radius: 3rem;
+    }
 
-<h4>Departamento</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+    .card-body-2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wide-input-reg {
+        width: 400px;
+        height: 40px;
+    }
+
+    .botoes {
+        justify-content: center;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .label {
+        margin-top: 1rem;
+        margin-left: 1rem;
+        margin-bottom: 0.5rem;
+        text-align: left;
+        font-weight: bold;
+    }
+</style>
+
+<div class="d-flex card shadow my-5 p-5 cover-container mx-auto">
+    <h2 class="text-center"><i class="fa-solid fa-pen-to-square"></i> @ViewData["Title"]</h2>
+    <hr />
+    <div class="d-flex card-body-2 flex-column align-items-center">
+        <h4><i class="fa-solid fa-building"></i> Departamento</h4>
+        <hr />
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Local" class="control-label"></label>
-                <input asp-for="Local" class="form-control" />
-                <span asp-validation-for="Local" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3" role="alert"></div>
+            <div class="formulario">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group my-2">
+                    <div class="label">
+                        <label asp-for="Nome" class="control-label"></label>
+                    </div>
+                    <input asp-for="Nome" class="shadow form-control rounded-pill wide-input-reg" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+                <div class="form-group my-2">
+                    <div class="label">
+                        <label asp-for="Local" class="control-label"></label>
+                    </div>
+                    <input asp-for="Local" class="shadow form-control rounded-pill wide-input-reg" />
+                    <span asp-validation-for="Local" class="text-danger"></span>
+                </div>
+                <div class="botoes mt-4">
+                    <button type="submit" value="Save" class="shadow btn btn-success rounded-pill p-2"><i class="fa-solid fa-floppy-disk"></i> Salvar</button>
+                    <button asp-action="Index" class="shadow btn btn-secondary rounded-pill p-2"><i class="fa-solid fa-arrow-left"></i> Voltar</button>
+                </div>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

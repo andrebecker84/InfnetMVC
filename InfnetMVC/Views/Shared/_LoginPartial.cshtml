@@ -20,7 +20,7 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <form asp-controller="Account" asp-action="Logout" method="post" class="form-check-inline">
-        <button type="submit" class="shadow btn btn-danger rounded-pill" title="Sair"><i class="fa-solid fa-person-running"></i></button>
+        <button type="submit" class="shadow btn btn-danger rounded-pill" title="Sair"><i class="fa-solid fa-person-running"></i> Sair</button>
     </form>
 }
 else

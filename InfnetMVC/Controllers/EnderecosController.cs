@@ -2,9 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using InfnetMVC.DAL;
 using InfnetMVC.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace InfnetMVC.Controllers
 {
+    [Authorize]
     public class EnderecosController : Controller
     {
         private readonly InfnetDbContext _context;
